@@ -1,0 +1,14 @@
+#forkme_banner {
+  display: block;
+  position: absolute;
+  top:0;
+  right: 10px;
+  z-index: 100;
+  padding: 0 4px 4px 4px;
+  color: #fff;
+  background: #007aff no-repeat 95% 50%;
+  font-weight: 350;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}

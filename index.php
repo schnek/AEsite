@@ -7,27 +7,14 @@
   <meta charset="utf-8">
   <title>AscEmu</title>
   <meta name="description" content="AscEmu Official">
-  <link href="favicon.png" rel="shortcut icon"/>
+  <link href="assets/images/favicon.png" rel="shortcut icon"/>
   <meta name="AscEmu" content="AE">
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <title>AscEmu</title>
  </head>
  <body>
-    <meta name="viewport" content="width=device-width,maximum-scale=2">
-    <link rel="stylesheet" type="text/css" media="screen" href="/slate/assets/css/style.css?v=52dc232fc58e5cfac2355ad81569659c0726c696">
-
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          {% if site.github.is_project_page %}
-            <a id="forkme_banner" href="{{ site.github.repository_url }}">View on GitHub</a>
-          {% endif %}
-        </header>
-    </div>
-    <!-- navbar -->    
- 
+    <!-- navbar -->
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -47,6 +34,7 @@
       <li class="nav-item active">
         <a class="nav-link" href="https://discordapp.com/invite/CBdgrh7/">Discord</span></a>
       </li>
+
       <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Other links</a>
       <div class="dropdown-menu">
@@ -56,33 +44,40 @@
         <a class="dropdown-item" href="https://www.openhub.net/p/AscEmu">AE on OpenHub</a>
         <div role="separator" class="dropdown-divider"></div>
         <a class="dropdown-item" href="https://github.com/AscEmu/AddOns">AddOns</a>
+
       </div>
     </li>
     </ul>
   </div>
+       <!-- Fork -->
+     <link rel="stylesheet" href="assets/css/AEstyle.css">
+   
+        <header class="inner">
+            <a id="forkme_banner" href="https://github.com/AscEmu/AscEmu">Fork AE on GitHub</a>
+        </header>
 </nav>
-    <!-- img -->    
- 
+
 <div class="jumbotron">
-  <h1 class="display-10">Welcome to AscEmu! <img src="https://travis-ci.org/AscEmu/AscEmu.svg?branch=master" style="heith:auto;"/>
+    <!-- content -->     
+ 
+  <h1 class="display-10">Welcome to AscEmu! </h1>    
+  <p class="">AscEmu is an independent MMORPG server framework. The goal of the project is to provide a solid foundation for users to build on whilst also providing control over most aspects of the game.</p>
+    <!-- img -->    
+
+  <img src="https://travis-ci.org/AscEmu/AscEmu.svg?branch=master" style="heith:auto;"/>
   <img src="https://ci.appveyor.com/api/projects/status/h70t5a5rd56y8ute/branch/master?svg=true" style="heith:auto;"/></a>
   <img src="https://img.shields.io/badge/license%20-MIT-brightgreen.svg" style="heith:auto;"/></a>
-</h1>
-  
-    <!-- content -->       
-  <p class="">AscEmu is an independent MMORPG server framework. The goal of the project is to provide a solid foundation for users to build on whilst also providing control over most aspects of the game.</p>
+
+    <!-- content -->
   <hr class="my-4">
   <p>AscEmu is a new emulator based mainly on community involvement, and a hard working team.  
   <br>Everyone is free to download the source code and make their own server to their own liking.  
   <br>Sign up to our forums today, and experience AscEmu for yourself. 
   <br>If you need any help in setting up our software, feel free to check the wiki, or ask on the forums, there are of people who will be glad to help you. </p>
-
-  
   <a class="btn btn-primary btn-lg" href="http://board.ascemu.org/index.php/Board/7-News/" role="button">Learn more</a>
 </div>
  
-<!-- card1 -->  
- 
+<!-- card1 -->
 <div class="card-group">
 <div class="card w-100">
   <div class="card-body">
@@ -92,16 +87,14 @@
   </div>
 </div>
 
-<!-- card2 -->  
- 
+<!-- card2 -->
 <div class="card w-100">
   <div class="card-body">
-<a class="twitter-timeline" href="https://twitter.com/AscEmu?ref_src=twsrc%5Etfw">Tweets by AscEmu</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a class="twitter-timeline" href="https://twitter.com/AscEmu?ref_src=twsrc%5Etfw">Tweets by AscEmu (AE)</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
  </div>
  </div>
 </head>
-
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
