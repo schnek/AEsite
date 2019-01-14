@@ -1,7 +1,0 @@
-permalink: pretty
-
-collections:
-  database:
-    output: true
-  docs:
-    output: true
