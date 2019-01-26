@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
  <head>
   <!-- Required meta tags -->
@@ -15,7 +14,7 @@
  <!-- navbar -->
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navAE" aria-controls="navAE" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <span class="navbar-toggler-icon">
    <a class="navbar-brand page-scroll" href="#page-top"><img src="assets/images/AE.png" style="width:111px; heith:auto;"/></a>
    </button>
    <div class="collapse navbar-collapse" id="navAE">
@@ -24,13 +23,13 @@
         <a class="nav-link" href="#">Home</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="https://ascemu.github.io/Wiki/">Wiki</span></a>
+        <a class="nav-link" href="https://ascemu.github.io/Wiki/">Wiki</a>
       </li>
       <li class="nav-item active">
         <a class="nav-link" href="http://board.ascemu.org/">Forum</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="https://discordapp.com/invite/CBdgrh7/">Discord</span></a>
+        <a class="nav-link" href="https://discordapp.com/invite/CBdgrh7/">Discord</a>
       </li>
       <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Other links</a>
@@ -83,7 +82,6 @@
  </div>
  </div>
  </div>
- </head>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
