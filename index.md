@@ -71,11 +71,9 @@
  <div class="card-group">
  <div class="card w-100">
  <div class="card-body">
-
 <div class=""></div>
-<p><iframe src="https://discordapp.com/widget?id=227808274488098819&theme=light" width="350" height="350" allowtransparency="true" frameborder="0"></iframe></p>
+<iframe src="https://discordapp.com/widget?id=227808274488098819&theme=light" width="350" height="350" allowtransparency="true" frameborder="0"></iframe>
 </div>
- </div>
  </div>
  <!-- card2 -->
  <div class="card w-100">
