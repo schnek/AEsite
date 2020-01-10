@@ -72,7 +72,7 @@
  <div class="card w-100">
  <div class="card-body">
 <div class=""></div>
-<iframe src="https://discordapp.com/widget?id=227808274488098819&theme=light" width="350" height="350" allowtransparency="true" frameborder="0"></iframe>
+<center><iframe src="https://discordapp.com/widget?id=227808274488098819&theme=light" width="350" height="350" allowtransparency="true" frameborder="0"></iframe></center>
 </div>
  </div>
  <!-- card2 -->
