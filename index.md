@@ -67,19 +67,19 @@
  <br>If you need any help in setting up our software, feel free to check the wiki, or ask on the forums, there are of people who will be glad to help you. </p>
  <a class="btn btn-primary btn-lg" href="http://board.ascemu.org/index.php/Board/7-News/" role="button">Learn more</a>
  </div> 
- <!-- card1 -->
- <div class="card-group">
- <div class="card w-100">
- <div class="card-body">
-<div class=""></div>
-<center><iframe src="https://discordapp.com/widget?id=227808274488098819&theme=light" width="480" height="400" allowtransparency="true" frameborder="0"></iframe></center>
-</div>
- </div>
- <!-- card2 -->
+
+<!-- card1 -->
+<div class="card-group">
  <div class="card w-100">
   <div class="card-body">
   <a class="twitter-timeline" href="https://twitter.com/AscEmu?ref_src=twsrc%5Etfw">Tweets by AscEmu (AE)</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
  </div>
+ </div>
+<!-- card2 -->
+ <div class="card w-100">
+ <div class="card-body">
+<div class=""></div> <center><iframe src="https://discordapp.com/widget?id=227808274488098819&theme=light" width="450" height="400" allowtransparency="true" frameborder="0"></iframe></center>
+</div>
  </div>
  </div>
   <!-- Optional JavaScript -->
