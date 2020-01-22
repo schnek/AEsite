@@ -1,0 +1,12 @@
+---
+layout: post
+title: "test"
+description: ""
+category: 
+tags: []
+---
+{% include JB/setup %}
+
+##MOO!
+
+MOOOOOOO
