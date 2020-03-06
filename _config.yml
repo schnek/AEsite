@@ -1,2 +1,7 @@
+permalink: pretty
 
-theme: jekyll-theme-slate
+collections:
+  database:
+    output: true
+  docs:
+    output: true
