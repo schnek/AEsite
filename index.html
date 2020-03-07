@@ -44,7 +44,13 @@ custom_js: index.js
             <button onclick="window.open('https://careers.twitter.com')" type="button" class="Button Button--large">View All Careers</button>
         </div>
         <div class="Grid-cell timeline-cell u-size1of2">
-            <p><iframe src="https://discordapp.com/widget?id=227808274488098819&theme=light width="100%" height="700"border="0" allowtransparency="true" frameborder="0"></iframe></p>
+            <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+  new Crate({
+    server: '227808274488098819',
+    channel: '227808274488098819',
+    shard: 'https://discordapp.com/widget?id=227808274488098819&theme=light'
+  })
+</script>
         </div>
     </div>
 </div>
