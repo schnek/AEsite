@@ -37,7 +37,7 @@ if (footer) {
 // Create DOM element for navigation bar
 var navBar = document.getElementsByTagName("nav")[0]
 
-// Create DOM element for mobile Twitter Open Source title
+// Create DOM element for mobile AscEmu Open Source title
 var navTitle = document.getElementsByClassName("home-text")[0]
 
 
