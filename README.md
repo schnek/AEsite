@@ -1,3 +1,16 @@
-# opensource.twitter.com
+![logo](images/logo.png)
 
-Home of opensource.twitter.com
+https://schnek.github.io/AEsite/
+
+[![LicenseCI][LicenseBadge]][LicenseUrl] [![DiscordCI][DiscordBadge]][DiscordUrl]
+
+
+
+
+<!-- Undercover:start:community -->
+[LicenseBadge]: images/LicenseAE-MIT.svg
+[LicenseUrl]: https://github.com/schnek/AEsite/blob/master/LICENSE
+
+[DiscordBadge]: images/Discord-AE-blue.svg
+[DiscordUrl]: https://discord.com/invite/CBdgrh7
+<!-- Undercover:end:community -->
