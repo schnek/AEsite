@@ -151,13 +151,7 @@ with open(file_path, "w+") as f:
     json.dump(DATA_JSON, f)
 print("LOG: Saved to", file_path)
 
-
 # Update the SVG
-print("No of members", SVG_NO_OF_MEMBERS)
-print("No of repos", SVG_NO_OF_REPOS)
-network_svg = open("assets/network_raw.svg").read()
-network_svg = network_svg.replace("{$members}", str(SVG_NO_OF_MEMBERS))
-network_svg = network_svg.replace("{$Repos}", str(SVG_NO_OF_REPOS))
 with open("assets/network.svg", "w+") as f:
     f.write(network_svg)
 print("LOG: assets/network.svg updated!")
