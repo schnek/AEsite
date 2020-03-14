@@ -1708,23 +1708,3 @@ h6 {
   line-height: 1rem;
   font-weight: 700;
 }
-/* Icons */
-.Icon::after,
-.Icon::before {
-  -moz-osx-font-smoothing: auto;
-  -webkit-font-smoothing: subpixel-antialiased;
-}
-.Icon.Icon--medium::after,
-.Icon.Icon--large::after,
-.Icon.Icon--extraLarge::after,
-.Icon.Icon--medium::before,
-.Icon.Icon--large::before,
-.Icon.Icon--extraLarge::before {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-.Icon.Icon--verified::after,
-.Icon.Icon--verified::before {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
