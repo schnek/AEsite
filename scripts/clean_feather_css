@@ -19,7 +19,7 @@ const FEATHER_CSS_PATHS = [
 function addLegalLines() {
   const copyrightYear = new Date().getFullYear();
   const encoding = 'utf-8';
-  const legalLine = `/*! Copyright ${copyrightYear} Twitter Inc. All rights reserved. */`;
+  const legalLine = `/*! Copyright ${copyrightYear} All rights reserved. */`;
 
   FEATHER_CSS_PATHS.forEach(filePath => {
     const oldCode = fs.readFileSync(filePath, { encoding });

@@ -22,10 +22,10 @@ var headingText = document.createTextNode("Follow Us ")
 
 var link = document.createElement("a")
 // Link text in heading
-var linkText = document.createTextNode("@TwitterOSS")
+var linkText = document.createTextNode("")
 link.appendChild(linkText)
 link.setAttribute("target", "_blank")
-link.setAttribute("href", "https://twitter.com/TwitterOSS")
+link.setAttribute("href", "")
 
 heading.appendChild(headingText)
 heading.appendChild(link)
@@ -72,8 +72,7 @@ function lessThan600px(mediaQuery) {
 
         // Timeline Height
         changeHeightByClass("twitter-timeline", "450px")
-        
-        // Follow Us @TwitterOSS
+
         parent.insertBefore(textCell, timeline)
         removeClassById("open-source-text", "u-size5of12")
         removeClassById("open-source-text", "u-before1of12")
@@ -99,7 +98,6 @@ function lessThan600px(mediaQuery) {
         // Timeline Height
         changeHeightByClass("twitter-timeline", "700px")
 
-        // Follow Us @TwitterOSS
         parent.insertBefore(textCell, timeline.nextSibling)
         addClassById("open-source-text", "u-size5of12")
         addClassById("open-source-text", "u-before1of12")
