@@ -152,6 +152,6 @@ with open(file_path, "w+") as f:
 print("LOG: Saved to", file_path)
 
 # Update the SVG
-with open("assets/framework_cover.jpg", "w+") as f:
+with open("assets/framework.svg", "w+") as f:
     f.write(network_svg)
-print("LOG: assets/framework_cover.jpg updated!")
+print("LOG: assets/framework.svg updated!")
