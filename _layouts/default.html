@@ -1,140 +1,49 @@
-<!-- index.html -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="title" content="{{ page.title }}">
-    <meta name="description" content="{{ page.description }}">
-    <meta name="keywords" content="{{ page.keywords }}">
+<!doctype html>
 
-    <meta name="og:title" content="{{ page.title }}">
-    <meta name="og:url" content="{{ page.url }}">
-    <!-- <meta name="og:image" content="{{ page.logo }}"> -->
-    <meta name="og:description" content="{{ page.description }}">
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>AscEmu Wiki</title>
+    <meta name="description" content="Official Wiki for AscEmu">
+    <meta name="author" content="Zyres">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <meta http-equiv='Expires' content='0'>
-    <meta http-equiv='Pragma' content='no-cache'>
-    <meta http-equiv='Cache-Control' content='no-cache'>
-    <meta http-equiv='imagetoolbar' content='no'>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 
-    <title>{{ page.title }}</title>
-    <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/assets/favicon.ico"/>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <!-- Feather CSS -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/feather-core.css"/>
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/feather-component-grid.css"/>
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/feather-component-button.css"/>
+    <link rel="stylesheet" href="/Wiki/css/aestyle.css">
+    <link rel="stylesheet" href="/Wiki/css/highlighter.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/Wiki/images/favicon.png">
+    
+    <style>
+        .topnav a {
+          float: right;
+          color: #333;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 15px;
+        }
+    </style>
 
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css"/>
+</head>
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ site.baseurl }}/css/{{ page.custom_css }}"/>
-
-  </head>
-
-  <body>
-
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="nav-title">
-            <!-- Link in web -->
-            <a class="home-link" href="{{ site.baseurl }}/">AscEmu Open Source</a>
-
-            <!-- Text in mobile -->
-            <p class="home-text">AscEmu Open Source</p>
-            <span id="caret" class="Icon Icon--caretDown"></span>
+<body>
+    <div class="wrapper">
+        {% include sidebar.html %}
+        <div id="content">
+            <div class="topnav">
+                <a target="_blank" href="https://github.com/AscEmu/AscEmu"><i class="fab fa-github"></i> Github</a>
+                <a target="_blank" href="https://discordapp.com/invite/CBdgrh7"><i class="fab fa-discord"></i> Discord</a>
+                <a target="_blank" href="https://github.com/AscEmu/Wiki/tree/master/{{ page.path }}"><i class="fas fa-code-branch"></i> Change this page</a>
+            </div>
+            {{ content }}
         </div>
-        <ul class="nav-menu">
-            <!-- This link only exists in mobile -->
-            <li id="extra-mobile-link" class="nav-list-item">
-                <a class="nav-link" href="{{ site.baseurl }}/">AscEmu Open Source</a>
-            </li>
-
-            <li class="nav-list-item">
-                <a class="nav-link" href="{{ site.baseurl }}/wiki">Wiki</a>
-            </li>
-
-            <li class="nav-list-item">
-                <a class="nav-link" href="{{ site.baseurl }}/memberships">#Squad</a>
-            </li>
-
-            <li class="nav-list-item">
-                <a class="nav-link" href="{{ site.baseurl }}/year-in-review">Year in Review</a>
-            </li>
-
-            <li class="nav-list-item">
-                <a class="nav-link" href="http://board.ascemu.org/" target="_blank">Communities</a>
-            </li>
-
-            <li class="nav-list-item list-end">
-                <a class="nav-link" href="https://github.com/AscEmu" target="_blank">AE GitHub</a>
-            </li>
-        </ul>
-    </nav>
-
-    <!-- Site wrapper -->
-    <div class="site">
-        {{ content }}
     </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        <div class="Grid container">
-            <div class="Grid-cell footer-cell u-size1of4 footer-margin">
-                <button onclick="location.href='{{ site.baseurl }}/wiki'" type="button" class="Button Button--large">Explore Wiki</button>
-            </div>
-            <div class="Grid-cell footer-cell u-size1of4 footer-margin">
-                <h3 class="xsmall-margin">
-                    <a class="foot-link" target="_blank" href="">About</a>
-                </h3>
-                <a class="foot-link" target="_blank" href="">See what’s happening</a>
-                <a class="foot-link" target="_blank" href="">Careers</a>
-            </div>
-
-            <div class="Grid-cell footer-cell u-size1of4 footer-margin">
-                <h3 class="xsmall-margin">
-                    <a class="foot-link" target="_blank" href="">Blogs</a>
-                </h3>
-                <a class="foot-link" target="_blank" href="">Open Source</a>
-                <a class="foot-link" target="_blank" href="">Engineering</a>
-                <a class="foot-link" target="_blank" href="">Developer</a>
-            </div>
-
-            <div class="Grid-cell footer-cell u-size1of4 footer-margin">
-                <h3 class="xsmall-margin">
-                    <a class="foot-link" target="_blank" href="">Developers</a>
-                </h3>
-                <a class="foot-link" target="_blank" href="https://ascemu.github.io/Wiki/">Documentation</a>
-                <a class="foot-link" target="_blank" href="http://board.ascemu.org/">Forums</a>
-                <a class="foot-link" target="_blank" href="">Communities</a>
-            </div>
-
-            <div class="Grid-cell footer-cell u-size1of4">
-                <a class="foot-link" href="">Best regards, The AscEmu Team</a>
-            </div>
-
-            <div class="Grid-cell footer-cell u-size1of4">
-                <a class="foot-link" target="_blank" href="">Cookies</a>
-            </div>
-
-            <div class="Grid-cell footer-cell u-size1of4">
-                <a class="foot-link" target="_blank" href="">Privacy</a>
-            </div>
-
-            <div class="Grid-cell footer-cell u-size1of4">
-                <a class="foot-link" target="_blank" href="">Terms and Conditions</a>
-            </div>
-
-        </div>
-    </div> <!-- End of Footer -->
-  </body>
-
+    
+</body>
 </html>
-
-<script src="{{ site.baseurl }}/js/main.js"></script>
-<script src="{{ site.baseurl }}/js/{{ page.custom_js }}"></script>
-
-{% include ga.html %}
