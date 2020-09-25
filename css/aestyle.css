@@ -90,6 +90,47 @@ a.nav-link:hover, a.nav-link:active {
 }
 
 /* ---------------------------------------------------
+    Navigation menu - Activated
+----------------------------------------------------- */
+
+  nav.active {
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  nav.active span.Icon--caretDown {
+    transform: rotate(-180deg);
+  }
+
+  nav.active .nav-menu {
+    display: block;
+    margin-top: calc(var(--feather-grid-mega) * 2);
+    margin-left: var(--feather-grid-medium);
+    margin-right: var(--feather-grid-medium);
+  }
+
+  a.nav-link:link {
+    -webkit-animation: fadein 1.5s;
+    -moz-animation: fadein 1.5s;
+    -ms-animation: fadein 1.5s;
+    -o-animation: fadein 1.5s;
+    animation: fadein 1.5s;
+  }
+
+  .home-link {
+    display: none;
+  }
+
+  .home-text {
+    display: inline-block;
+  }
+
+  #extra-mobile-link {
+    display: block;
+  }
+}
+
+/* ---------------------------------------------------
     Sidebar style from bootstrap
 ----------------------------------------------------- */
 
