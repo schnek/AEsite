@@ -1,3 +1,30 @@
 <nav id="sidebar">
+    <nav>
+        <div class="nav-title">
+            <!-- Link in web -->
+            <a class="home-link" href="{{ site.baseurl }}/">AscEmu Open Source</a>
 
+            <!-- Text in mobile -->
+            <p class="home-text">AscEmu Open Source</p>
+            <span id="caret" class="Icon Icon--caretDown"></span>
+        </div>
+        <ul class="nav-menu">
+            <!-- This link only exists in mobile -->
+            <li id="extra-mobile-link" class="nav-list-item">
+                <a class="nav-link" href="{{ site.baseurl }}/">AscEmu Open Source</a>
+            </li>
+
+            <li class="nav-list-item">
+                <a class="nav-link" href="{{ site.baseurl }}/wiki">Wiki</a>
+            </li>
+
+            <li class="nav-list-item">
+                <a class="nav-link" href="http://board.ascemu.org/" target="_blank">Communities</a>
+            </li>
+
+            <li class="nav-list-item list-end">
+                <a class="nav-link" href="https://github.com/AscEmu" target="_blank">GitHub</a>
+            </li>
+        </ul>
+    </nav>
 </nav>
