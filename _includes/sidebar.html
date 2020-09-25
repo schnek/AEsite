@@ -1,25 +1,10 @@
 <nav id="sidebar">
     <div class="sidebar-header">
-        <a href="{{ site.url }}/" title="Visit the main page"><img src="//images/logo.png" alt="AscEmu " class="sidebar-brand"></a>
+        <a href="{{ site.url }}/" title="Visit the main page"><img src="/images/logo.png" alt="AscEmu" class="sidebar-brand"></a>
     </div>
 
     <ul class="list-unstyled components">
-        <li><a href="{{ site.url }}/">AscEmu</a></li>
-        <li>
-            <a href="#unsortedGroup" data-toggle="collapse" aria-expanded="false">Unsorted Docs</a>
-            <ul class="collapse list-unstyled" id="unsortedGroup">
-                {% for item in site.docs %}
-                {% if item.type != 'unsorted' %}
-                    {% continue %}
-                {% endif %}
-                {% if item.title == '_example_file' %}
-                    {% continue %}
-                {% endif %}
-                <li><a href="{{ site.url }}/{{ item.url }}">{{ item.title }}</a></li>
-                {% endfor %}
-                <li><a href="{{ site.url }}/docs/packets">Packets</a></li>
-            </ul>
-        </li>
+        <li><a href="{{ site.url }}/AEsite/">AscEmu</a></li>
         <li><a href="{{ site.url }}/docs/history/">History</a></li>
     </ul>
 </nav>
