@@ -1,51 +1,48 @@
-/* ---------------------------------------------------
-    Content
------------------------------------------------------ */
-#content {
-    width: 100%;
+.wrapper {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
 }
 
-#content {
-    width: 100%
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
 }
 
-/* ---------------------------------------------------
-    img overwrite bootstrap default
------------------------------------------------------ */
-img {
-    vertical-align: bottom;
+.header {
+  background: tomato;
 }
 
-/* ---------------------------------------------------
-    p styles
------------------------------------------------------ */
-p.error, p.warning, p.info, p.success {
-    border-left: 5px solid #000;
-    padding: 3px 5px;
-    margin-left: -10px;
-    background-color: #fbfbfb;
+.footer {
+  background: lightgreen;
 }
 
-p.error {
-    border-color: #ff3022;
+.main {
+  text-align: left;
+  background: deepskyblue;
 }
 
-p.warning {
-    border-color: #ffe722;
+.aside-1 {
+  background: gold;
 }
 
-p.info {
-    border-color: #22d3ff;
+.aside-2 {
+  background: hotpink;
 }
 
-p.success {
-    border-color: #14ec28;
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
 }
 
-/* ---------------------------------------------------
-    tables
------------------------------------------------------ */
-table th, table td {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .aside-1 { order: 1; } 
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+
+body {
+  padding: 2em; 
 }
