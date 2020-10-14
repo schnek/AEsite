@@ -1,5 +1,16 @@
 /* ---------------------------------------------------
+    Wrapp the content inside it (important for sidebar)
+----------------------------------------------------- */
+.wrapper {
+    display: flex;
     align-items: stretch;
+    width: 100%
+}
+
+/* ---------------------------------------------------
+    Content
+----------------------------------------------------- */
+#content {
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
