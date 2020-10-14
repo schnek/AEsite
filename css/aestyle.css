@@ -1,18 +1,17 @@
 /* ---------------------------------------------------
-    Content
-
-    display: flex;
-    align-items: stretch;
-    width: 100%
-
------------------------------------------------------ */
-#content {
     align-items: stretch;
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
     width: 100%;
     margin-left: 260px;
+
+----------------------------------------------------- */
+#content {
+
+    display: flex;
+    align-items: stretch;
+    width: 100%
 }
 
 /* ---------------------------------------------------
