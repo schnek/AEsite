@@ -1,51 +1,14 @@
-/* ---------------------------------------------------
-    Content
------------------------------------------------------ */
-#content {
-    width: 100%;
-}
-
-#content {
-    width: 100%
-}
-
-/* ---------------------------------------------------
-    img overwrite bootstrap default
------------------------------------------------------ */
-img {
-    vertical-align: bottom;
-}
-
-/* ---------------------------------------------------
-    p styles
------------------------------------------------------ */
-p.error, p.warning, p.info, p.success {
-    border-left: 5px solid #000;
-    padding: 3px 5px;
-    margin-left: -10px;
-    background-color: #fbfbfb;
-}
-
-p.error {
-    border-color: #ff3022;
-}
-
-p.warning {
-    border-color: #ffe722;
-}
-
-p.info {
-    border-color: #22d3ff;
-}
-
-p.success {
-    border-color: #14ec28;
-}
-
-/* ---------------------------------------------------
-    tables
------------------------------------------------------ */
-table th, table td {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
+#forkme_banner {
+  display: block;
+  position: absolute;
+  top:0;
+  right: 10px;
+  z-index: 100;
+  padding: 0 4px 4px 4px;
+  color: #fff;
+  background: #ee9836 no-repeat 95% 50%;
+  font-weight: 350;
+  box-shadow: 0 0 10px rgba(0,0,0,.5);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
