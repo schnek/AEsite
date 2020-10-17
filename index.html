@@ -54,26 +54,47 @@
 <!-- navbar  --> 
 <!-- banner 
 <header class="inner"><a id="forkme_banner" href="https://github.com/AscEmu/AscEmu"><i class="fab fa-github">Make your Fork</i></a></header>  --> 
-<!-- banner  --> 
-<!-- content --> 
+<!-- banner  -->
+<!-- content1 --> 
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+  </li>
+<!--   <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+  </li> --> 
+</ul>
+<!-- content1 --> 
+<!-- content2 --> 
 <div class="jumbotron">
+<div class="tab-content" id="myTabContent">
+  <div class="tab-pane fade show active nav-link" id="home" role="tabpanel" aria-labelledby="home-tab">
   <h1 class="display-3 "><center>Welcome to AscEmu!</center></h1>
   <p class="col-sm-7 mx-auto">AscEmu is an independent MMORPG server framework.<br> The goal of the project is to provide a solid foundation for users to build on whilst also providing control over most aspects of the game.</p>
-<!-- <a href="https://discordapp.com/invite/CBdgrh7/"><img src="images/Discord-AE-blue.svg" style="heith:auto;"/></a>
-  <a href="https://scan.coverity.com/projects/4747"><img src="https://camo.githubusercontent.com/e213090d8208bb5ac7957cddc161f840d3858bca/68747470733a2f2f7363616e2e636f7665726974792e636f6d2f70726f6a656374732f343734372f62616467652e737667" style="heith:auto;"/></a>
-  <img src="https://github.com/schnek/AscEmu/workflows/AscEmu%20CI/badge.svg?branch=develop" style="heith:auto;"/>
-  <a href="https://github.com/AscEmu/AscEmu/blob/master/README-MIT.md"><img src="images/LicenseAE-MIT.svg" style="heith:auto;"/></a>
-  <a href="https://ci.appveyor.com/project/Zyres/ascemu"><img src="https://ci.appveyor.com/api/projects/status/h70t5a5rd56y8ute/branch/master?svg=true" style="heith:auto;"/></a> -->
   <hr class="my-2">
   <p class="col-sm-7 mx-auto">AscEmu is a new emulator based mainly on community involvement, and a hard working team.<br>
   Everyone is free to download the source code and make their own server to their own liking.<br>
   Sign up to our forums today, and experience AscEmu for yourself.<br>
   If you need any help in setting up our software, feel free to check the wiki, or ask on the forums, there are of people who will be glad to help you.</p>
   <p class="lead">
-    <a href="http://board.ascemu.org/index.php/Board/32-Core-Script-development/"><button type="button" class="btn btn-secondary btn-lg btn-block">Learn more</button></a>
+    <a href="http://board.ascemu.org/index.php/Board/32-Core-Script-development/"><button type="button" class="btn btn-secondary btn-lg btn-block">latest blog news</button></a>
   </p>
+  </div>
+<!--   <div class="tab-pane fade nav-link"  id="profile" role="tabpanel" aria-labelledby="profile-tab">
+  <a href="https://discordapp.com/invite/CBdgrh7/"><img src="images/Discord-AE-blue.svg" style="heith:auto;"/></a>
+  <a href="https://scan.coverity.com/projects/4747"><img src="https://camo.githubusercontent.com/e213090d8208bb5ac7957cddc161f840d3858bca/68747470733a2f2f7363616e2e636f7665726974792e636f6d2f70726f6a656374732f343734372f62616467652e737667" style="heith:auto;"/></a>
+  <img src="https://github.com/schnek/AscEmu/workflows/AscEmu%20CI/badge.svg?branch=develop" style="heith:auto;"/>
+  <a href="https://github.com/AscEmu/AscEmu/blob/master/README-MIT.md"><img src="images/LicenseAE-MIT.svg" style="heith:auto;"/></a>
+  <a href="https://ci.appveyor.com/project/Zyres/ascemu"><img src="https://ci.appveyor.com/api/projects/status/h70t5a5rd56y8ute/branch/master?svg=true" style="heith:auto;"/></a>
+  </div>
+  <div class="tab-pane fade nav-link" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+  ...
+  </div> --> 
 </div>
-<!-- content -->
+<!-- content2 -->
 <!-- discord --> 
 <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
   new Crate({
@@ -83,25 +104,4 @@
   })
 </script>
 <!-- discord --> 
-<!-- card   
-<div class="card">
-    <img class="card-img" src="images/framework_cover.jpg" alt="...">
-    <div class="card-img-overlay">
-    </div>
-</div> -->
-<!-- card    -->
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
