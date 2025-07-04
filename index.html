@@ -1,96 +1,138 @@
-<!doctype html>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>AscEmu Open Source</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AscEmu — Open Source WoW Emulator</title>
   <meta name="description" content="AscEmu Open Source Website">
   <meta name="Keywords" content="AscEmu, open, source, open source"> 
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/aestyle.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #111827; /* Tailwind: bg-gray-900 */
+      color: white;
+      background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(255,255,255,0.02) 80px, rgba(255,255,255,0.02) 81px),
+        repeating-linear-gradient(-45deg, transparent, transparent 80px, rgba(255,255,255,0.02) 80px, rgba(255,255,255,0.02) 81px),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='40' y='40' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-size='18' fill='rgba(255,255,255,0.03)' transform='rotate(-45 40 40)'%3EAscEmu%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 80px 80px;
+    }
+    a {
+      text-decoration: none;
+    }
+  </style>
 </head>
-<!-- navbar  --> 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="navbar-collapse collapse w-100 dual-collapse2 order-1 order-md-0">
-        <ul class="navbar-nav ml-auto text-center">
-            <li class="nav-item active">
-                <a class="nav-link" href="https://github.com/AscEmu/AscEmu/issues"><center>Issues</center></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://github.com/AscEmu/AscEmu"><center>Git</center></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://discordapp.com/invite/CBdgrh7"><center>Discord</center></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://ascemu.github.io/Wiki"><center>Wiki</center></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="https://ascemu.github.io/Wiki/docs/commands/commands"><center>GM Commands</center></a>
-            </li>
-        </ul>
+<body class="min-h-screen flex flex-col bg-gray-900 text-white">
+
+  <header class="py-6 px-4 md:px-12 flex justify-between items-center flex-nowrap">
+    <img src="https://camo.githubusercontent.com/10f7da94d073f548ecee4df4e79dee63e3c03e9b737fe5d2f81878b9a40daac3/687474703a2f2f617363656d752e6f72672f696d616765732f6c6f676f2e706e67" alt="AscEmu Logo" class="h-10" />
+    
+    <nav class="flex items-center space-x-6">
+      <a href="https://github.com/AscEmu/AscEmu" target="_blank" class="text-sm text-gray-300 hover:text-white">
+        View on GitHub
+      </a>
+      <a href="https://discord.com/invite/CBdgrh7" target="_blank" class="text-sm text-gray-300 hover:text-white">
+        Discord
+      </a>
+      <a href="https://github.com/ascemu/ascemu/issues/new/choose" target="_blank" class="text-sm text-gray-300 hover:text-white">
+        Issues
+      </a>
+      <a href="https://ascemu.github.io/Wiki/docs/commands/commands/" target="_blank" class="text-sm text-gray-300 hover:text-white">
+        GM Commands
+      </a>
+    </nav>
+  </header>
+
+  <main class="flex-grow flex flex-col items-center justify-center text-center px-4">
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to AscEmu!</h1>
+    <p class="text-lg md:text-xl text-gray-300 max-w-2xl mb-8">
+      AscEmu is an open-source emulator based on the Ascent project. Actively developed and community-driven.
+    </p>
+
+    <div class="flex flex-col md:flex-row gap-4 mb-6">
+      <a href="https://github.com/AscEmu/AscEmu/releases/latest" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-200">
+        Download Latest Release
+      </a>
+      <a href="https://github.com/AscEmu/AscEmu/wiki" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-200">
+        Wiki
+      </a>
     </div>
-    <div class="mx-auto my-2 order-0 order-md-1 position-relative">
-        <a class="mx-auto" href="#"> </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-            <span class="">AscEmu</span>
-        </button>
-    </div>
-    </div>
-</nav>
-<!-- navbar  --> 
-<!-- banner 
-<header class="inner"><a id="forkme_banner" href="https://github.com/AscEmu/AscEmu"><i class="fab fa-github">Make your Fork</i></a></header>  --> 
-<!-- banner  -->
-<!-- content1 --> 
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item">
-    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#" role="tab" aria-controls="home" aria-selected="true">Home</a>
-  </li>
-<!--   <li class="nav-item">
-    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
-  </li> --> 
-</ul>
-<!-- content1 --> 
-<!-- content2 --> 
-<div class="jumbotron">
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active nav-link" id="home" role="tabpanel" aria-labelledby="home-tab">
-  <h1 class="display-3"><center>Welcome to AscEmu!</center></h1>
-  <p class="col-sm-10 mx-auto">AscEmu is an independent MMORPG server framework.<br> The goal of the project is to provide a solid foundation for users to build on whilst also providing control over most aspects of the game.</p>
-  <hr class="my-2">
-  <p class="col-sm-10 mx-auto">AscEmu is a new emulator based mainly on community involvement, and a hard working team.<br>
-  Everyone is free to download the source code and make their own server to their own liking.<br>
-  Sign up to our forums today, and experience AscEmu for yourself.<br>
-  If you need any help in setting up our software, feel free to check the wiki, or ask on the forums, there are of people who will be glad to help you.</p>
-  </div>
-<!--   <div class="tab-pane fade nav-link"  id="profile" role="tabpanel" aria-labelledby="profile-tab">
-  <a href="https://discordapp.com/invite/CBdgrh7/"><img src="images/Discord-AE-blue.svg" style="heith:auto;"/></a>
-  <a href="https://scan.coverity.com/projects/4747"><img src="https://camo.githubusercontent.com/e213090d8208bb5ac7957cddc161f840d3858bca/68747470733a2f2f7363616e2e636f7665726974792e636f6d2f70726f6a656374732f343734372f62616467652e737667" style="heith:auto;"/></a>
-  <img src="https://github.com/schnek/AscEmu/workflows/AscEmu%20CI/badge.svg?branch=develop" style="heith:auto;"/>
-  <a href="https://github.com/AscEmu/AscEmu/blob/master/README-MIT.md"><img src="images/LicenseAE-MIT.svg" style="heith:auto;"/></a>
-  <a href="https://ci.appveyor.com/project/Zyres/ascemu"><img src="https://ci.appveyor.com/api/projects/status/h70t5a5rd56y8ute/branch/master?svg=true" style="heith:auto;"/></a>
-  </div>
-  <div class="tab-pane fade nav-link" id="contact" role="tabpanel" aria-labelledby="contact-tab">
-  ...
-  </div> --> 
-</div>
-<!-- content2 -->
-<!-- discord --> 
-<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
-  new Crate({
-    server: '227808274488098819',
-    channel: '227808274488098819',
-    shard: 'https://discordapp.com/widget?id=227808274488098819&theme=light'
-  })
-</script>
-<!-- discord --> 
+
+    <div id="commit-list" class="max-w-2xl mx-auto text-left text-gray-300 mb-8"></div>
+
+    <p class="text-sm text-gray-500 mb-8 text-center">
+      <a href="https://github.com/AscEmu/AscEmu/blob/master/README-MIT.md" target="_blank" class="hover:text-white">Licensed under the MIT 🫰</a>
+    </p>
+  </main>
+
+  <!-- Discord widget -->
+  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer></script>
+  <script>
+    window.addEventListener('load', () => {
+      new Crate({
+        server: '227808274488098819',
+        channel: '227808274488098819',
+        shard: 'https://discordapp.com/widget?id=227808274488098819&theme=light'
+      });
+    });
+  </script>
+
+  <!-- Fetch latest commits -->
+  <script>
+    async function fetchCommits() {
+      const repoOwner = 'AscEmu';
+      const repoName = 'AscEmu';
+      const commitsUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?per_page=5`;
+
+      try {
+        const response = await fetch(commitsUrl);
+        if (!response.ok) throw new Error('GitHub API error');
+        const commits = await response.json();
+
+        const listContainer = document.getElementById('commit-list');
+        listContainer.innerHTML = '<h3 class="text-2xl font-semibold mb-4">Latest Changes</h3>';
+
+        const wrapper = document.createElement('div');
+        wrapper.className = "space-y-4";
+
+        commits.forEach(commit => {
+          const message = commit.commit.message.split('\n')[0];
+          const url = commit.html_url;
+          const date = new Date(commit.commit.author.date).toLocaleDateString();
+          const author = commit.author;
+
+          const commitDiv = document.createElement('div');
+          commitDiv.className = "flex items-center space-x-4";
+
+          const avatar = document.createElement('img');
+          avatar.src = author?.avatar_url || 'https://github.com/ghost.png';
+          avatar.alt = author?.login || 'unknown';
+          avatar.className = "w-8 h-8 rounded-full border border-gray-700";
+
+          const authorLink = author?.login ? `https://github.com/${author.login}` : '#';
+          const content = document.createElement('div');
+          content.innerHTML = `
+            <a href="${url}" target="_blank" class="hover:underline text-blue-400 font-medium">${message}</a><br>
+            <a href="${authorLink}" target="_blank" class="text-sm text-gray-500 hover:underline">${author?.login || 'unknown'}</a> <span class="text-sm text-gray-500">${date}</span>
+          `;
+
+          commitDiv.appendChild(avatar);
+          commitDiv.appendChild(content);
+          wrapper.appendChild(commitDiv);
+        });
+
+        listContainer.appendChild(wrapper);
+
+      } catch (error) {
+        document.getElementById('commit-list').innerText = 'Failed to load recent commits.';
+        console.error(error);
+      }
+    }
+
+    fetchCommits();
+  </script>
+
+</body>
 </html>
+
