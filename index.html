@@ -92,25 +92,44 @@
       margin-left: 0.25rem;
     }
 
-    /* Discussion layout */
+    /* Discussion list layout - similar to commits */
     #discussion-list > div {
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      overflow-x: hidden;
     }
 
     #discussion-list .discussion-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       background: rgba(255 255 255 / 0.05);
       padding: 0.5rem 0.75rem;
       border-radius: 0.5rem;
-      box-shadow: 0 0 8px rgba(255 255 255 / 0.1);
-      font-size: 1rem;
+      box-shadow: 0 0 5px rgba(255 255 255 / 0.1);
+      font-size: 0.875rem;
+      line-height: 1.2;
+    }
+
+    #discussion-list img {
+      width: 30px;
+      height: 30px;
+      border-radius: 9999px;
+      border: 1px solid #374151;
+      flex-shrink: 0;
     }
 
     #discussion-list a {
       color: #60a5fa;
       font-weight: 600;
       word-break: break-word;
+    }
+
+    #discussion-list .author-date {
+      color: #9ca3af;
+      font-size: 0.75rem;
+      margin-left: 0.25rem;
     }
 
     /* Responsive design for mobile */
@@ -141,7 +160,8 @@
         max-width: 100%;
       }
 
-      #commit-list .commit-item {
+      #commit-list .commit-item,
+      #discussion-list .discussion-item {
         min-width: 100%;
       }
     }
@@ -256,7 +276,7 @@
   async function fetchDiscussions() {
     const repoOwner = 'AscEmu';
     const repoName = 'AscEmu';
-    const discussionsApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/discussions?per_page=10`;
+    const discussionsApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/discussions?per_page=5`;
 
     const headers = {
       'Accept': 'application/vnd.github.v3+json'
@@ -267,20 +287,31 @@
       if (!response.ok) throw new Error('GitHub Discussions API error');
       const discussions = await response.json();
 
-      const generalDiscussions = discussions.slice(0, 5);
-
       const container = document.querySelector('#discussion-list > div');
       container.innerHTML = '';
 
-      if (generalDiscussions.length === 0) {
+      if (discussions.length === 0) {
         container.textContent = 'No general discussions found.';
         return;
       }
 
-      generalDiscussions.forEach(d => {
+      discussions.forEach(discussion => {
+        const author = discussion.user;
+        const authorName = author ? author.login : 'Unknown';
+        const authorAvatar = author ? author.avatar_url : '';
+        const createdDate = new Date(discussion.created_at).toLocaleDateString();
+
         const discElem = document.createElement('div');
         discElem.className = 'discussion-item';
-        discElem.innerHTML = `<a href="${d.html_url}" target="_blank" title="${d.title}">${d.title.length > 100 ? d.title.slice(0, 100) + '…' : d.title}</a>`;
+
+        discElem.innerHTML = `
+          <img src="${authorAvatar}" alt="${authorName} avatar" loading="lazy" />
+          <div>
+            <a href="${discussion.html_url}" target="_blank" title="${discussion.title}">${discussion.title.length > 60 ? discussion.title.slice(0, 60) + '…' : discussion.title}</a>
+            <div class="author-date">${authorName} • ${createdDate}</div>
+          </div>
+        `;
+
         container.appendChild(discElem);
       });
     } catch (e) {
