@@ -267,7 +267,7 @@
       if (!response.ok) throw new Error('GitHub Discussions API error');
       const discussions = await response.json();
 
-      const generalDiscussions = discussions.filter(d => d.category_name && d.category_name.toLowerCase() == 'general').slice(0, 1);
+      const generalDiscussions = discussions.filter(d => d.category_name && d.category_name.toLowerCase() == 'General').slice(0, 1);
 
       const container = document.querySelector('#discussion-list > div');
       container.innerHTML = '';
