@@ -245,6 +245,9 @@
         const message = commit.commit.message.split('\n')[0];
         const author = commit.author || commit.commit.author;
         const authorName = author ? author.login || commit.commit.author.name : 'Unknown';
+        const authorProfileUrl = author
+          ? (author.html_url || `https://github.com/${author.login}`)
+          : '#';
         const authorAvatar = author ? author.avatar_url || '' : '';
         const commitDate = new Date(commit.commit.author.date).toLocaleDateString();
         const commitUrl = commit.html_url;
@@ -256,7 +259,7 @@
           <img src="${authorAvatar}" alt="${authorName} avatar" loading="lazy" />
           <div>
             <a href="${commitUrl}" target="_blank" title="${message}">${message.length > 60 ? message.slice(0, 60) + '…' : message}</a>
-            <div class="author-date">${authorName} • ${commitDate}</div>
+            <div class="author-date"><a href="${authorProfileUrl}" target="_blank" class="text-blue-400 hover:underline">${authorName}</a> • ${commitDate}</div>
           </div>
         `;
 
@@ -298,6 +301,9 @@
       discussions.forEach(discussion => {
         const author = discussion.user;
         const authorName = author ? author.login : 'Unknown';
+        const authorProfileUrl = author
+          ? (author.html_url || `https://github.com/${author.login}`)
+          : '#';
         const authorAvatar = author ? author.avatar_url : '';
         const createdDate = new Date(discussion.created_at).toLocaleDateString();
 
@@ -308,7 +314,7 @@
           <img src="${authorAvatar}" alt="${authorName} avatar" loading="lazy" />
           <div>
             <a href="${discussion.html_url}" target="_blank" title="${discussion.title}">${discussion.title.length > 60 ? discussion.title.slice(0, 60) + '…' : discussion.title}</a>
-            <div class="author-date">${authorName} • ${createdDate}</div>
+            <div class="author-date"><a href="${authorProfileUrl}" target="_blank" class="text-blue-400 hover:underline">${authorName}</a> • ${createdDate}</div>
           </div>
         `;
 
