@@ -2,212 +2,316 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AscEmu — Open Source WoW Emulator</title>
-  <meta name="description" content="AscEmu Open Source Website">
-  <meta name="Keywords" content="AscEmu, open, source, open source"> 
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
   <style>
     body {
-      background-color: #111827; /* Tailwind: bg-gray-900 */
+      background-color: #111827;
       color: white;
-      background-image: 
+      background-image:
         repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(255,255,255,0.02) 80px, rgba(255,255,255,0.02) 81px),
         repeating-linear-gradient(-45deg, transparent, transparent 80px, rgba(255,255,255,0.02) 80px, rgba(255,255,255,0.02) 81px),
         url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='40' y='40' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-size='18' fill='rgba(255,255,255,0.03)' transform='rotate(-45 40 40)'%3EAscEmu%3C/text%3E%3C/svg%3E");
       background-repeat: repeat;
       background-size: 80px 80px;
+      margin: 0;
+      font-family: 'Inter', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
     a {
       text-decoration: none;
+    }
+    header {
+      flex-wrap: nowrap;
+    }
+    nav a {
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: white;
+    }
+    /* Buttons */
+    .btn {
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 5px 15px -5px rgba(59, 130, 246, 0.5);
+      transition: background-color 0.2s ease;
+      display: inline-block;
+      text-align: center;
+    }
+    .btn-blue {
+      background-color: #2563eb;
+      color: white;
+    }
+    .btn-blue:hover {
+      background-color: #1d4ed8;
+    }
+    .btn-gray {
+      background-color: #1f2937;
+      color: white;
+    }
+    .btn-gray:hover {
+      background-color: #374151;
+    }
+    /* Commits: horizontal compact list */
+    #commit-list > div {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    #commit-list .commit-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      min-width: 250px;
+      background: rgba(255 255 255 / 0.05);
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 5px rgba(255 255 255 / 0.1);
+      font-size: 0.875rem;
+      line-height: 1.2;
+    }
+    #commit-list img {
+      width: 30px;
+      height: 30px;
+      border-radius: 9999px;
+      border: 1px solid #374151;
+      flex-shrink: 0;
+    }
+    #commit-list a {
+      color: #60a5fa;
+      font-weight: 600;
+    }
+    #commit-list a:hover {
+      text-decoration: underline;
+    }
+    #commit-list .author-date {
+      color: #9ca3af;
+      font-size: 0.75rem;
+      margin-left: 0.25rem;
+    }
+    /* Discussions */
+    #discussion-list {
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      padding: 1rem;
+      background: rgba(255 255 255 / 0.05);
+      border-radius: 0.5rem;
+      box-shadow: 0 0 8px rgba(255 255 255 / 0.1);
+    }
+    #discussion-list h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-align: center;
+    }
+    #discussion-list a {
+      color: #60a5fa;
+      font-weight: 600;
+    }
+    #discussion-list a:hover {
+      text-decoration: underline;
+    }
+    #discussion-list .discussion-item {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+      }
+      header img {
+        flex-shrink: 0;
+        margin-bottom: 0.5rem;
+      }
+      nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        width: 100%;
+      }
+      nav a {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+      }
+      main > div.flex {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 1.5rem;
+      }
+      .btn {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.9rem !important;
+        width: 100%;
+      }
+      #commit-list > div {
+        justify-content: center;
+      }
+      #commit-list .commit-item {
+        min-width: 100%;
+      }
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col bg-gray-900 text-white">
 
-  <header class="py-6 px-4 md:px-12 flex justify-between items-center flex-nowrap">
-    <img src="https://camo.githubusercontent.com/10f7da94d073f548ecee4df4e79dee63e3c03e9b737fe5d2f81878b9a40daac3/687474703a2f2f617363656d752e6f72672f696d616765732f6c6f676f2e706e67" alt="AscEmu Logo" class="h-10" />
-    
-    <nav class="flex items-center space-x-6">
-      <a href="https://github.com/AscEmu/AscEmu" target="_blank" class="text-sm text-gray-300 hover:text-white">
-        View on GitHub
-      </a>
-      <a href="https://discord.com/invite/CBdgrh7" target="_blank" class="text-sm text-gray-300 hover:text-white">
-        Discord
-      </a>
-      <a href="https://github.com/ascemu/ascemu/issues/new/choose" target="_blank" class="text-sm text-gray-300 hover:text-white">
-        Issues
-      </a>
-      <a href="https://ascemu.github.io/Wiki/docs/commands/commands/" target="_blank" class="text-sm text-gray-300 hover:text-white">
-        GM Commands
-      </a>
-    </nav>
-  </header>
+<header class="py-6 px-4 md:px-12 flex justify-between items-center flex-nowrap">
+  <img src="https://camo.githubusercontent.com/10f7da94d073f548ecee4df4e79dee63e3c03e9b737fe5d2f81878b9a40daac3/687474703a2f2f617363656d752e6f72672f696d616765732f6c6f676f2e706e67" alt="AscEmu Logo" class="h-10" />
+  <nav class="flex items-center space-x-6">
+    <a href="https://github.com/AscEmu/AscEmu" target="_blank" class="text-sm text-gray-300 hover:text-white">
+      View on GitHub
+    </a>
+    <a href="https://discord.com/invite/CBdgrh7" target="_blank" class="text-sm text-gray-300 hover:text-white">
+      Discord
+    </a>
+    <a href="https://github.com/ascemu/ascemu/issues/new/choose" target="_blank" class="text-sm text-gray-300 hover:text-white">
+      Issues
+    </a>
+    <a href="https://ascemu.github.io/Wiki/docs/commands/commands/" target="_blank" class="text-sm text-gray-300 hover:text-white">
+      GM Commands
+    </a>
+  </nav>
+</header>
 
-  <main class="flex-grow flex flex-col items-center justify-center text-center px-4">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to AscEmu!</h1>
-    <p class="text-lg md:text-xl text-gray-300 max-w-2xl mb-8">
-      AscEmu is an open-source emulator based on the Ascent project. Actively developed and community-driven.
-    </p>
+<main class="flex-grow flex flex-col items-center justify-center text-center px-4">
+  <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to AscEmu!</h1>
+  <p class="text-lg md:text-xl text-gray-300 max-w-2xl mb-8">
+    AscEmu is an open-source emulator based on the Ascent project. Actively developed and community-driven.
+  </p>
 
-    <div class="flex flex-col md:flex-row gap-4 mb-6">
-      <a href="https://github.com/AscEmu/AscEmu/releases/latest" target="_blank" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-200">
-        Download Latest Release
-      </a>
-      <a href="https://github.com/AscEmu/AscEmu/wiki" target="_blank" class="bg-gray-800 hover:bg-gray-700 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition duration-200">
-        Wiki
-      </a>
-    </div>
+  <div class="flex flex-col md:flex-row gap-4 mb-6">
+    <a href="https://github.com/AscEmu/AscEmu/releases/latest" target="_blank" class="btn btn-blue">
+      Download Latest Release
+    </a>
+    <a href="https://github.com/AscEmu/AscEmu/wiki" target="_blank" class="btn btn-gray">
+      Wiki
+    </a>
+  </div>
 
-    <div id="commit-list" class="max-w-2xl mx-auto text-left text-gray-300 mb-8"></div>
+  <section id="commit-list" class="max-w-4xl mx-auto text-left text-gray-300 mb-8">
+    <h3 class="text-2xl font-semibold mb-4 text-center">Latest Changes</h3>
+    <div></div>
+  </section>
 
-    <!-- General Discussions Section -->
-    <section id="discussion-list" class="max-w-2xl mx-auto text-left text-gray-300 mb-8">
-      <h3 class="text-2xl font-semibold mb-4 text-center">General Discussions</h3>
-      <div>Loading discussions...</div>
-    </section>
+  <section id="discussion-list" class="max-w-4xl mx-auto text-left text-gray-300 mb-8">
+    <h3>General Discussions</h3>
+    <div>Loading discussions...</div>
+  </section>
 
-    <p class="text-sm text-gray-500 mb-8 text-center">
-      <a href="https://github.com/AscEmu/AscEmu/blob/master/README-MIT.md" target="_blank" class="hover:text-white">Licensed under the MIT 🫰</a>
-    </p>
-  </main>
+  <p class="text-sm text-gray-500 mb-8 text-center">
+    <a href="https://github.com/AscEmu/AscEmu/blob/master/README-MIT.md" target="_blank" class="hover:text-white">Licensed under the MIT 🫰</a>
+  </p>
+</main>
 
-  <!-- Discord widget -->
-  <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer></script>
-  <script>
-    window.addEventListener('load', () => {
-      new Crate({
-        server: '227808274488098819',
-        channel: '227808274488098819',
-        shard: 'https://discordapp.com/widget?id=227808274488098819&theme=light'
-      });
+<!-- Discord widget -->
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer></script>
+<script>
+  window.addEventListener('load', () => {
+    new Crate({
+      server: '227808274488098819',
+      channel: '227808274488098819',
+      shard: 'https://discordapp.com/widget?id=227808274488098819&theme=light'
     });
-  </script>
+  });
+</script>
 
-  <!-- Fetch latest commits -->
-  <script>
-    async function fetchCommits() {
-      const repoOwner = 'AscEmu';
-      const repoName = 'AscEmu';
-      const commitsUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?per_page=5`;
+<!-- Fetch latest commits -->
+<script>
+  async function fetchCommits() {
+    const repoOwner = 'AscEmu';
+    const repoName = 'AscEmu';
+    const commitsUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/commits?per_page=5`;
 
-      try {
-        const response = await fetch(commitsUrl);
-        if (!response.ok) throw new Error('GitHub API error');
-        const commits = await response.json();
+    try {
+      const response = await fetch(commitsUrl);
+      if (!response.ok) throw new Error('GitHub API error');
+      const commits = await response.json();
 
-        const listContainer = document.getElementById('commit-list');
-        listContainer.innerHTML = '<h3 class="text-2xl font-semibold mb-4">Latest Changes</h3>';
+      const listContainer = document.querySelector('#commit-list > div');
+      listContainer.innerHTML = '';
 
-        const wrapper = document.createElement('div');
-        wrapper.className = "space-y-4";
+      commits.forEach(commit => {
+        const message = commit.commit.message.split('\n')[0];
+        const author = commit.author || commit.commit.author;
+        const authorName = author ? author.login || commit.commit.author.name : 'Unknown';
+        const authorAvatar = author ? author.avatar_url || '' : '';
+        const commitDate = new Date(commit.commit.author.date).toLocaleDateString();
+        const commitUrl = commit.html_url;
 
-        commits.forEach(commit => {
-          const message = commit.commit.message.split('\n')[0];
-          const url = commit.html_url;
-          const date = new Date(commit.commit.author.date).toLocaleDateString();
-          const author = commit.author;
+        const commitElem = document.createElement('div');
+        commitElem.className = 'commit-item';
 
-          const commitDiv = document.createElement('div');
-          commitDiv.className = "flex items-center space-x-4";
+        commitElem.innerHTML = `
+          <img src="${authorAvatar}" alt="${authorName} avatar" loading="lazy" />
+          <div>
+            <a href="${commitUrl}" target="_blank" title="${message}">${message.length > 60 ? message.slice(0, 60) + '…' : message}</a>
+            <div class="author-date">${authorName} • ${commitDate}</div>
+          </div>
+        `;
 
-          const avatar = document.createElement('img');
-          avatar.src = author?.avatar_url || 'https://github.com/ghost.png';
-          avatar.alt = author?.login || 'unknown';
-          avatar.className = "w-8 h-8 rounded-full border border-gray-700";
+        listContainer.appendChild(commitElem);
+      });
+    } catch (e) {
+      document.querySelector('#commit-list > div').textContent = 'Failed to load commits.';
+      console.error(e);
+    }
+  }
+  fetchCommits();
+</script>
 
-          const authorLink = author?.login ? `https://github.com/${author.login}` : '#';
-          const content = document.createElement('div');
-          content.innerHTML = `
-            <a href="${url}" target="_blank" class="hover:underline text-blue-400 font-medium">${message}</a><br>
-            <a href="${authorLink}" target="_blank" class="text-sm text-gray-500 hover:underline">${author?.login || 'unknown'}</a> <span class="text-sm text-gray-500">${date}</span>
-          `;
+<!-- Fetch GitHub Discussions (general category) -->
+<script>
+  async function fetchDiscussions() {
+    const repoOwner = 'AscEmu';
+    const repoName = 'AscEmu';
 
-          commitDiv.appendChild(avatar);
-          commitDiv.appendChild(content);
-          wrapper.appendChild(commitDiv);
-        });
+    const discussionsApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/discussions?per_page=10`;
+    const headers = {
+      'Accept': 'application/vnd.github.v3+json',
+    };
 
-        listContainer.appendChild(wrapper);
+    try {
+      const response = await fetch(discussionsApiUrl, { headers });
+      if (!response.ok) throw new Error('Failed to fetch discussions');
 
-      } catch (error) {
-        document.getElementById('commit-list').innerText = 'Failed to load recent commits.';
-        console.error(error);
+      const discussions = await response.json();
+
+      // Filter discussions with category "general" (case-insensitive)
+      const generalDiscussions = discussions.filter(d =>
+        d.category_name && d.category_name.toLowerCase() === 'general'
+      );
+
+      const container = document.querySelector('#discussion-list > div');
+      container.innerHTML = '';
+
+      if (generalDiscussions.length === 0) {
+        container.textContent = 'No general discussions found.';
+        return;
       }
+
+      generalDiscussions.forEach(discussion => {
+        const item = document.createElement('div');
+        item.className = 'discussion-item';
+        item.innerHTML = `<a href="${discussion.html_url}" target="_blank" rel="noopener noreferrer">${discussion.title}</a>`;
+        container.appendChild(item);
+      });
+    } catch (error) {
+      const container = document.querySelector('#discussion-list > div');
+      container.textContent = 'Failed to load discussions.';
+      console.error(error);
     }
+  }
 
-    fetchCommits();
-  </script>
-
-  <!-- Fetch GitHub Discussions (general category) -->
-  <script>
-    async function fetchDiscussions() {
-      const repoOwner = 'AscEmu';
-      const repoName = 'AscEmu';
-      const discussionsApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/discussions?per_page=5`;
-
-      const headers = {
-        'Accept': 'application/vnd.github.v3+json'
-      };
-
-      try {
-        const response = await fetch(discussionsApiUrl, { headers });
-        if (!response.ok) throw new Error('GitHub Discussions API error');
-        const discussions = await response.json();
-
-        const generalDiscussions = discussions.filter(d => d.category_name && d.category_name.toLowerCase() === 'general').slice(0, 5);
-
-        const container = document.querySelector('#discussion-list > div');
-        container.innerHTML = '';
-
-        if (generalDiscussions.length === 0) {
-          container.textContent = 'No general discussions found.';
-          return;
-        }
-
-        generalDiscussions.forEach(d => {
-          const discElem = document.createElement('div');
-          discElem.className = 'discussion-item';
-          discElem.innerHTML = `<a href="${d.html_url}" target="_blank" title="${d.title}">${d.title.length > 100 ? d.title.slice(0, 97) + '...' : d.title}</a>`;
-          container.appendChild(discElem);
-        });
-
-      } catch (error) {
-        const container = document.querySelector('#discussion-list > div');
-        container.textContent = 'Failed to load discussions.';
-        console.error(error);
-      }
-    }
-
-    fetchDiscussions();
-  </script>
-
-  <style>
-    #discussion-list {
-      padding: 1rem;
-      margin: 1rem auto;
-      max-width: 600px;
-      background: #1f2937; /* Tailwind gray-800 */
-      border-radius: 0.5rem;
-      box-shadow: 0 0 8px rgba(0,0,0,0.3);
-    }
-    #discussion-list h3 {
-      margin-bottom: 0.75rem;
-      text-align: center;
-      color: #f3f4f6; /* Tailwind gray-100 */
-    }
-    #discussion-list a {
-      color: #3b82f6; /* Tailwind blue-500 */
-      font-weight: 600;
-      text-decoration: none;
-      display: block;
-      margin-bottom: 0.5rem;
-      word-break: break-word;
-    }
-    #discussion-list a:hover {
-      text-decoration: underline;
-    }
-  </style>
+  fetchDiscussions();
+</script>
 
 </body>
 </html>
