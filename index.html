@@ -54,26 +54,24 @@
     .btn-gray:hover {
       background-color: #374151;
     }
-    /* Commits list - vertical column */
+    /* Commits: horizontal compact list */
     #commit-list > div {
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      max-width: 700px;
-      margin: 0 auto;
-      overflow-x: hidden;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     #commit-list .commit-item {
       display: flex;
       align-items: center;
       gap: 0.5rem;
+      min-width: 250px;
       background: rgba(255 255 255 / 0.05);
       padding: 0.5rem 0.75rem;
       border-radius: 0.5rem;
       box-shadow: 0 0 5px rgba(255 255 255 / 0.1);
       font-size: 0.875rem;
       line-height: 1.2;
-      min-width: 0; /* чтобы не выходило за контейнер */
     }
     #commit-list img {
       width: 30px;
@@ -85,7 +83,6 @@
     #commit-list a {
       color: #60a5fa;
       font-weight: 600;
-      word-break: break-word;
     }
     #commit-list a:hover {
       text-decoration: underline;
@@ -95,34 +92,31 @@
       font-size: 0.75rem;
       margin-left: 0.25rem;
     }
-    /* Discussions - horizontal row with scroll */
-    #discussion-list > div {
-      display: flex;
-      flex-direction: row;
-      gap: 1.5rem;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      max-width: 100%;
-      padding-bottom: 0.5rem;
-      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
-    }
-    #discussion-list .discussion-item {
-      flex: 0 0 auto;
+    /* Discussions */
+    #discussion-list {
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      padding: 1rem;
       background: rgba(255 255 255 / 0.05);
-      padding: 0.5rem 0.75rem;
       border-radius: 0.5rem;
       box-shadow: 0 0 8px rgba(255 255 255 / 0.1);
-      font-size: 1rem;
-      min-width: 250px;
-      max-width: 300px;
+    }
+    #discussion-list h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+      text-align: center;
     }
     #discussion-list a {
       color: #60a5fa;
       font-weight: 600;
-      word-break: break-word;
     }
     #discussion-list a:hover {
       text-decoration: underline;
+    }
+    #discussion-list .discussion-item {
+      margin-bottom: 0.75rem;
+      font-size: 1rem;
     }
     /* Responsive */
     @media (max-width: 768px) {
@@ -159,13 +153,10 @@
         width: 100%;
       }
       #commit-list > div {
-        max-width: 100%;
+        justify-content: center;
       }
       #commit-list .commit-item {
         min-width: 100%;
-      }
-      #discussion-list > div {
-        padding-bottom: 0.5rem;
       }
     }
   </style>
@@ -211,7 +202,7 @@
   </section>
 
   <section id="discussion-list" class="max-w-4xl mx-auto text-left text-gray-300 mb-8">
-    <h3 class="text-2xl font-semibold mb-4 text-center">General Discussions</h3>
+    <h3>General Discussions</h3>
     <div>Loading discussions...</div>
   </section>
 
@@ -281,18 +272,22 @@
   async function fetchDiscussions() {
     const repoOwner = 'AscEmu';
     const repoName = 'AscEmu';
-    const discussionsApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/discussions?per_page=10`;
 
+    const discussionsApiUrl = `https://api.github.com/repos/${repoOwner}/${repoName}/discussions?per_page=10`;
     const headers = {
-      'Accept': 'application/vnd.github.v3+json'
+      'Accept': 'application/vnd.github.v3+json',
     };
 
     try {
       const response = await fetch(discussionsApiUrl, { headers });
-      if (!response.ok) throw new Error('GitHub Discussions API error');
+      if (!response.ok) throw new Error('Failed to fetch discussions');
+
       const discussions = await response.json();
 
-      const generalDiscussions = discussions.filter(d => d.category_name && d.category_name.toLowerCase() === 'general').slice(0, 5);
+      // Filter discussions with category "general" (case-insensitive)
+      const generalDiscussions = discussions.filter(d =>
+        d.category_name && d.category_name.toLowerCase() === 'general'
+      );
 
       const container = document.querySelector('#discussion-list > div');
       container.innerHTML = '';
@@ -302,18 +297,19 @@
         return;
       }
 
-      generalDiscussions.forEach(d => {
-        const discElem = document.createElement('div');
-        discElem.className = 'discussion-item';
-        discElem.innerHTML = `<a href="${d.html_url}" target="_blank" title="${d.title}">${d.title.length > 100 ? d.title.slice(0, 100) + '…' : d.title}</a>`;
-        container.appendChild(discElem);
+      generalDiscussions.forEach(discussion => {
+        const item = document.createElement('div');
+        item.className = 'discussion-item';
+        item.innerHTML = `<a href="${discussion.html_url}" target="_blank" rel="noopener noreferrer">${discussion.title}</a>`;
+        container.appendChild(item);
       });
-    } catch (e) {
+    } catch (error) {
       const container = document.querySelector('#discussion-list > div');
       container.textContent = 'Failed to load discussions.';
-      console.error(e);
+      console.error(error);
     }
   }
+
   fetchDiscussions();
 </script>
 
