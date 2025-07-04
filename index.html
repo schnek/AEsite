@@ -18,19 +18,12 @@
       margin: 0;
       font-family: 'Inter', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     }
+
     a {
       text-decoration: none;
     }
-    header {
-      flex-wrap: nowrap;
-    }
-    nav a {
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: white;
-    }
-    /* Buttons */
+
+    /* Button styles */
     .btn {
       font-weight: 600;
       padding: 0.75rem 1.5rem;
@@ -40,29 +33,33 @@
       display: inline-block;
       text-align: center;
     }
+
     .btn-blue {
       background-color: #2563eb;
       color: white;
     }
+
     .btn-blue:hover {
       background-color: #1d4ed8;
     }
+
     .btn-gray {
       background-color: #1f2937;
       color: white;
     }
+
     .btn-gray:hover {
       background-color: #374151;
     }
-    /* Commits list - vertical column */
+
+    /* Commit list layout */
     #commit-list > div {
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      max-width: 700px;
-      margin: 0 auto;
       overflow-x: hidden;
     }
+
     #commit-list .commit-item {
       display: flex;
       align-items: center;
@@ -73,8 +70,8 @@
       box-shadow: 0 0 5px rgba(255 255 255 / 0.1);
       font-size: 0.875rem;
       line-height: 1.2;
-      min-width: 0; /* чтобы не выходило за контейнер */
     }
+
     #commit-list img {
       width: 30px;
       height: 30px;
@@ -82,49 +79,41 @@
       border: 1px solid #374151;
       flex-shrink: 0;
     }
+
     #commit-list a {
       color: #60a5fa;
       font-weight: 600;
       word-break: break-word;
     }
-    #commit-list a:hover {
-      text-decoration: underline;
-    }
+
     #commit-list .author-date {
       color: #9ca3af;
       font-size: 0.75rem;
       margin-left: 0.25rem;
     }
-    /* Discussions - horizontal row with scroll */
+
+    /* Discussion layout */
     #discussion-list > div {
       display: flex;
-      flex-direction: row;
-      gap: 1.5rem;
-      flex-wrap: nowrap;
-      overflow-x: auto;
-      max-width: 100%;
-      padding-bottom: 0.5rem;
-      -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+      flex-direction: column;
+      gap: 1rem;
     }
+
     #discussion-list .discussion-item {
-      flex: 0 0 auto;
       background: rgba(255 255 255 / 0.05);
       padding: 0.5rem 0.75rem;
       border-radius: 0.5rem;
       box-shadow: 0 0 8px rgba(255 255 255 / 0.1);
       font-size: 1rem;
-      min-width: 250px;
-      max-width: 300px;
     }
+
     #discussion-list a {
       color: #60a5fa;
       font-weight: 600;
       word-break: break-word;
     }
-    #discussion-list a:hover {
-      text-decoration: underline;
-    }
-    /* Responsive */
+
+    /* Responsive design for mobile */
     @media (max-width: 768px) {
       header {
         flex-wrap: wrap;
@@ -132,20 +121,7 @@
         gap: 1rem;
         padding: 1rem;
       }
-      header img {
-        flex-shrink: 0;
-        margin-bottom: 0.5rem;
-      }
-      nav {
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.75rem;
-        width: 100%;
-      }
-      nav a {
-        font-size: 0.875rem;
-        padding: 0.25rem 0.5rem;
-      }
+
       main > div.flex {
         flex-direction: column;
         gap: 1rem;
@@ -153,68 +129,66 @@
         max-width: 320px;
         margin: 0 auto 1.5rem;
       }
+
       .btn {
         padding: 0.5rem 1rem !important;
         font-size: 0.9rem !important;
         width: 100%;
       }
-      #commit-list > div {
+
+      #commit-list > div,
+      #discussion-list > div {
         max-width: 100%;
       }
+
       #commit-list .commit-item {
         min-width: 100%;
-      }
-      #discussion-list > div {
-        padding-bottom: 0.5rem;
       }
     }
   </style>
 </head>
 <body class="min-h-screen flex flex-col bg-gray-900 text-white">
 
+<!-- Header with navigation -->
 <header class="py-6 px-4 md:px-12 flex justify-between items-center flex-nowrap">
   <img src="https://camo.githubusercontent.com/10f7da94d073f548ecee4df4e79dee63e3c03e9b737fe5d2f81878b9a40daac3/687474703a2f2f617363656d752e6f72672f696d616765732f6c6f676f2e706e67" alt="AscEmu Logo" class="h-10" />
   <nav class="flex items-center space-x-6">
-    <a href="https://github.com/AscEmu/AscEmu" target="_blank" class="text-sm text-gray-300 hover:text-white">
-      View on GitHub
-    </a>
-    <a href="https://discord.com/invite/CBdgrh7" target="_blank" class="text-sm text-gray-300 hover:text-white">
-      Discord
-    </a>
-    <a href="https://github.com/ascemu/ascemu/issues/new/choose" target="_blank" class="text-sm text-gray-300 hover:text-white">
-      Issues
-    </a>
-    <a href="https://ascemu.github.io/Wiki/docs/commands/commands/" target="_blank" class="text-sm text-gray-300 hover:text-white">
-      GM Commands
-    </a>
+    <a href="https://github.com/AscEmu/AscEmu" target="_blank" class="text-sm text-gray-300 hover:text-white">View on GitHub</a>
+    <a href="https://discord.com/invite/CBdgrh7" target="_blank" class="text-sm text-gray-300 hover:text-white">Discord</a>
+    <a href="https://github.com/ascemu/ascemu/issues/new/choose" target="_blank" class="text-sm text-gray-300 hover:text-white">Issues</a>
+    <a href="https://ascemu.github.io/Wiki/docs/commands/commands/" target="_blank" class="text-sm text-gray-300 hover:text-white">GM Commands</a>
   </nav>
 </header>
 
+<!-- Main content -->
 <main class="flex-grow flex flex-col items-center justify-center text-center px-4">
   <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to AscEmu!</h1>
   <p class="text-lg md:text-xl text-gray-300 max-w-2xl mb-8">
     AscEmu is an open-source emulator based on the Ascent project. Actively developed and community-driven.
   </p>
 
+  <!-- Call to action buttons -->
   <div class="flex flex-col md:flex-row gap-4 mb-6">
-    <a href="https://github.com/AscEmu/AscEmu/releases/latest" target="_blank" class="btn btn-blue">
-      Download Latest Release
-    </a>
-    <a href="https://github.com/AscEmu/AscEmu/wiki" target="_blank" class="btn btn-gray">
-      Wiki
-    </a>
+    <a href="https://github.com/AscEmu/AscEmu/releases/latest" target="_blank" class="btn btn-blue">Download Latest Release</a>
+    <a href="https://github.com/AscEmu/AscEmu/wiki" target="_blank" class="btn btn-gray">Wiki</a>
   </div>
 
-  <section id="commit-list" class="max-w-4xl mx-auto text-left text-gray-300 mb-8">
-    <h3 class="text-2xl font-semibold mb-4 text-center">Latest Changes</h3>
-    <div></div>
-  </section>
+  <!-- Commits & Discussions: Side-by-side columns -->
+  <div class="flex flex-col md:flex-row gap-8 justify-center items-start w-full max-w-6xl mb-12">
+    <!-- Left Column: Latest Changes -->
+    <section id="commit-list" class="flex-1 text-left text-gray-300">
+      <h3 class="text-2xl font-semibold mb-4 text-center md:text-left">Latest Changes</h3>
+      <div></div>
+    </section>
 
-  <section id="discussion-list" class="max-w-4xl mx-auto text-left text-gray-300 mb-8">
-    <h3 class="text-2xl font-semibold mb-4 text-center">General Discussions</h3>
-    <div>Loading discussions...</div>
-  </section>
+    <!-- Right Column: General Discussions -->
+    <section id="discussion-list" class="flex-1 text-left text-gray-300">
+      <h3 class="text-2xl font-semibold mb-4 text-center md:text-left">General Discussions</h3>
+      <div>Loading discussions...</div>
+    </section>
+  </div>
 
+  <!-- Footer with license -->
   <p class="text-sm text-gray-500 mb-8 text-center">
     <a href="https://github.com/AscEmu/AscEmu/blob/master/README-MIT.md" target="_blank" class="hover:text-white">Licensed under the MIT 🫰</a>
   </p>
@@ -232,7 +206,7 @@
   });
 </script>
 
-<!-- Fetch latest commits -->
+<!-- GitHub Commits Fetch -->
 <script>
   async function fetchCommits() {
     const repoOwner = 'AscEmu';
@@ -273,10 +247,11 @@
       console.error(e);
     }
   }
+
   fetchCommits();
 </script>
 
-<!-- Fetch GitHub Discussions (general category) -->
+<!-- GitHub Discussions Fetch -->
 <script>
   async function fetchDiscussions() {
     const repoOwner = 'AscEmu';
@@ -314,6 +289,7 @@
       console.error(e);
     }
   }
+
   fetchDiscussions();
 </script>
 
