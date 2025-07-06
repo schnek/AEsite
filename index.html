@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AscEmu — Open Source WoW Emulator</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> 
   <style>
     body {
       background-color: #111827;
@@ -124,13 +125,25 @@
         min-width: 100%;
       }
     }
+
+    /* Container query for hiding avatars if main is too narrow */
+    main {
+      container-type: inline-size;
+    }
+
+    @container (max-width: 1150px) {
+      .commit-item img,
+      .discussion-item img {
+        display: none;
+      }
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col bg-gray-900 text-white">
 
 <!-- Header with navigation -->
 <header class="py-6 px-4 md:px-12 flex justify-between items-center relative">
-  <img src="https://camo.githubusercontent.com/10f7da94d073f548ecee4df4e79dee63e3c03e9b737fe5d2f81878b9a40daac3/687474703a2f2f617363656d752e6f72672f696d616765732f6c6f676f2e706e67" alt="AscEmu Logo" class="h-10" />
+  <img src="images/logo.png" alt="AscEmu Logo" class="h-10" />
   
   <!-- Desktop nav -->
   <nav class="hidden md:flex items-center space-x-6">
@@ -157,6 +170,7 @@
   </div>
 </header>
 
+<!-- Main Content -->
 <main class="flex-grow flex flex-col items-center justify-center text-center px-4">
   <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to AscEmu!</h1>
   <p class="text-lg md:text-xl text-gray-300 max-w-2xl mb-8">
@@ -273,6 +287,13 @@
 
   fetchDiscussions();
 </script>
-
+<!-- discord --> 
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+  new Crate({
+    server: '227808274488098819',
+    channel: '227808274488098819',
+    shard: 'https://discordapp.com/widget?id=227808274488098819&theme=light'
+  })
+</script>
 </body>
 </html>
