@@ -5,8 +5,139 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>AscEmu</title>
   <link href="css/tailwind.min.css" rel="stylesheet" />
-  <link href="css/AscEmu.css" rel="stylesheet" />
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> 
+  <style>
+    body {
+      background-color: #111827;
+      color: white;
+      background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 80px, rgba(255,255,255,0.02) 80px, rgba(255,255,255,0.02) 81px),
+        repeating-linear-gradient(-45deg, transparent, transparent 80px, rgba(255,255,255,0.02) 80px, rgba(255,255,255,0.02) 81px),
+        url("data:image/svg+xml,%3Csvg width='80' height='80' xmlns='http://www.w3.org/2000/svg'%3E%3Ctext x='40' y='40' text-anchor='middle' dominant-baseline='middle' font-family='Arial' font-size='18' fill='rgba(255,255,255,0.03)' transform='rotate(-45 40 40)'%3EAscEmu%3C/text%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 80px 80px;
+      margin: 0;
+      font-family: 'Inter', sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .btn {
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 5px 15px -5px rgba(59, 130, 246, 0.5);
+      transition: background-color 0.2s ease;
+      display: inline-block;
+      text-align: center;
+    }
+
+    .btn-blue {
+      background-color: #2563eb;
+      color: white;
+    }
+
+    .btn-blue:hover {
+      background-color: #1d4ed8;
+    }
+
+    .btn-gray {
+      background-color: #1f2937;
+      color: white;
+    }
+
+    .btn-gray:hover {
+      background-color: #374151;
+    }
+
+    #commit-list > div,
+    #discussion-list > div {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      overflow-x: hidden;
+    }
+
+    .commit-item,
+    .discussion-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255 255 255 / 0.05);
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0 5px rgba(255 255 255 / 0.1);
+      font-size: 0.875rem;
+      line-height: 1.2;
+    }
+
+    .commit-item img,
+    .discussion-item img {
+      width: 30px;
+      height: 30px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .author-date {
+      color: #9ca3af;
+      font-size: 0.75rem;
+      margin-left: 0.25rem;
+    }
+
+    #commit-list a,
+    #discussion-list a {
+      color: #60a5fa;
+      font-weight: 600;
+      word-break: break-word;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 1rem;
+      }
+
+      main > div.flex {
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto 1.5rem;
+      }
+
+      .btn {
+        padding: 0.5rem 1rem !important;
+        font-size: 0.9rem !important;
+        width: 100%;
+      }
+
+      #commit-list > div,
+      #discussion-list > div {
+        max-width: 100%;
+      }
+
+      .commit-item,
+      .discussion-item {
+        min-width: 100%;
+      }
+    }
+
+    /* Container query for hiding avatars if main is too narrow */
+    main {
+      container-type: inline-size;
+    }
+
+    @container (max-width: 1150px) {
+      .commit-item img,
+      .discussion-item img {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body class="min-h-screen flex flex-col bg-gray-900 text-white">
 
@@ -52,8 +183,7 @@
 
   <div class="flex flex-col md:flex-row gap-4 mb-6">
     <a href="https://github.com/AscEmu/AscEmu/releases/latest" target="_blank" class="btn btn-blue">Download Latest Release</a>
-    <a href="https://ascemu.github.io/Wiki/" target="_blank" class="btn btn-gray">Wiki</a>
-    <a href="https://schnek.github.io/AEdoxygen/" target="_blank" class="btn btn-blue">Doxygen Documentation</a>
+    <a href="https://github.com/AscEmu/AscEmu/wiki" target="_blank" class="btn btn-gray">Wiki</a>
   </div>
 
   <div class="flex flex-col md:flex-row gap-8 justify-center items-start w-full max-w-6xl mb-12">
